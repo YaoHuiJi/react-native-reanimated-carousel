@@ -24,6 +24,7 @@ interface Props {
   handlerOffset: Animated.SharedValue<number>
   layoutConfig: TAnimationStyle
   renderItem: CarouselRenderItem<any>
+  keyExtractor: ((item: any, index: number) => string
   customAnimation?: ((value: number) => AnimatedStyleProp<ViewStyle>)
 }
 
@@ -40,6 +41,7 @@ export const ItemRenderer: FC<Props> = (props) => {
     autoFillData,
     layoutConfig,
     renderItem,
+    keyExtractor,
     customAnimation,
   } = props;
 
@@ -83,7 +85,7 @@ export const ItemRenderer: FC<Props> = (props) => {
 
           return (
             <BaseLayout
-              key={index}
+              key={keyExtractor ? keyExtractor(item, index) : index}
               index={index}
               handlerOffset={offsetX}
               visibleRanges={visibleRanges}
