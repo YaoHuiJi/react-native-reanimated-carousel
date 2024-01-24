@@ -44,6 +44,7 @@ const Carousel = React.forwardRef<ICarouselInstance, TCarouselProps<any>>(
       withAnimation,
       fixedDirection,
       renderItem,
+      keyExtractor,
       onScrollEnd,
       onSnapToItem,
       onScrollStart,
@@ -190,6 +191,7 @@ const Carousel = React.forwardRef<ICarouselInstance, TCarouselProps<any>>(
               handlerOffset={handlerOffset}
               layoutConfig={layoutConfig}
               renderItem={renderItem}
+              keyExtractor={keyExtractor}
               customAnimation={customAnimation}
             />
           </ScrollViewGesture>
