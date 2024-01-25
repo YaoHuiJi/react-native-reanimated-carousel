@@ -24,7 +24,7 @@ interface Props {
   handlerOffset: Animated.SharedValue<number>
   layoutConfig: TAnimationStyle
   renderItem: CarouselRenderItem<any>
-  keyExtractor: ((item: any, index: number) => string
+  keyExtractor: ((item: any, index: number) => string)
   customAnimation?: ((value: number) => AnimatedStyleProp<ViewStyle>)
 }
 
