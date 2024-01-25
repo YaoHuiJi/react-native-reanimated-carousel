@@ -176,6 +176,10 @@ export type TCarouselProps<T = any> = {
       */
   renderItem: CarouselRenderItem<T>
   /**
+      * Extract a unique key for a given item at the specified index
+      */
+  keyExtractor?: (item: any, index: number) => string
+  /**
       * Callback fired when navigating to an item.
       */
   onSnapToItem?: (index: number) => void
